@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "./header"
+import Footer from "./footer"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +16,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const additionalBodyClasses = 'flex flex-col min-h-screen';
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${additionalBodyClasses}`}>
+      <script src="https://kit.fontawesome.com/3cb8c7f243.js" crossOrigin="anonymous"></script>
+        <Header />
+        {children}
+        <Footer />
+        </body>
     </html>
   );
 }
