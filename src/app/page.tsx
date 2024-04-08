@@ -1,16 +1,25 @@
+"use client";
+import React, { useState } from "react";
+import AudioRecorder from "@/components/audioRecorder";
+
+
 export default function Home() {
+
+  const log = () => {
+    console.log("Test")
+  }
+
+  const [effect, setEffect] = useState(false);
+
   return (
-    <main className="flex pb-10 flex-grow flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-slate-100">
+    <main className="flex pb-10 flex-grow flex-col items-center justify-center bg-gradient-to-b from-blue-200 to-white">
       <h1 className="text-5xl font-medium">
-        Audio<span className="text-blue-700">Translate</span>
+        Audio<span className="text-blue-700">Scribe</span>
       </h1>
       <div className="py-2">
       Free Audio Transcription & Translation
       </div>
-      <img
-                src={"/images/mic_logo.png"}
-                className="my-2 flex h-[70px] w-auto object-scale-down items-center justify-center rounded-md"
-      />
+      <AudioRecorder />
     </main>
   );
 }
